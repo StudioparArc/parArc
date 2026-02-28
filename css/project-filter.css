@@ -1,0 +1,59 @@
+/* ========== PROJECT FILTER STYLES ========== */
+
+.filter-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+    border-radius: 4px;
+}
+
+.filter-btn:hover {
+    border-color: var(--foreground);
+    color: var(--foreground);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--foreground);
+    color: var(--background);
+    border-color: var(--foreground);
+}
+
+.project-card {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease, display 0.4s ease;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 0.7rem;
+    }
+}

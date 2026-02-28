@@ -1,0 +1,7 @@
+# Large files managed by Git LFS
+# United World International School.mp4 removed from ignore
+
+# General ignores
+*.log
+node_modules/
+.DS_Store

@@ -1,0 +1,157 @@
+/* 
+   Hero Animation CSS - Ultra Smooth Cinematic Edition
+   Optimized for hardware acceleration and fluid motion
+*/
+
+.hero-slider-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: -5%;
+    /* Increased bleed for ultra-smooth panning */
+    opacity: 0;
+    transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    will-change: transform, opacity;
+    /* Hardware acceleration hint */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 
+   Cinematic Motion Variations 
+   Using 'linear' for motion ensures a constant velocity, which feels "smoother" 
+   and more like professional camera work.
+*/
+.hero-slide.active.ken-burns-in {
+    animation: kenBurnsIn 15s linear forwards;
+}
+
+.hero-slide.active.ken-burns-out {
+    animation: kenBurnsOut 15s linear forwards;
+}
+
+.hero-slide.active.ken-burns-left {
+    animation: kenBurnsLeft 15s linear forwards;
+}
+
+.hero-slide.active.ken-burns-right {
+    animation: kenBurnsRight 15s linear forwards;
+}
+
+@keyframes kenBurnsIn {
+    0% {
+        transform: scale(1.05) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.18) translate(-1%, -0.5%);
+    }
+}
+
+@keyframes kenBurnsOut {
+    0% {
+        transform: scale(1.18) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.05) translate(1%, 0.5%);
+    }
+}
+
+@keyframes kenBurnsLeft {
+    0% {
+        transform: scale(1.1) translate(1%, 0);
+    }
+
+    100% {
+        transform: scale(1.1) translate(-2%, 0);
+    }
+}
+
+@keyframes kenBurnsRight {
+    0% {
+        transform: scale(1.1) translate(-2%, 0);
+    }
+
+    100% {
+        transform: scale(1.1) translate(1%, 0);
+    }
+}
+
+.hero-slide.prev {
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Overlay for better text readability */
+.hero-slider-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.05) 50%,
+            rgba(0, 0, 0, 0.6) 100%);
+    z-index: 3;
+}
+
+/* Ensure the hero-section content is explicitly above the slider */
+.hero-content {
+    position: relative;
+    z-index: 10 !important;
+}
+
+/* Typing Animation Styles */
+.hero-title {
+    min-height: 2.2em;
+    display: block;
+}
+
+.typing-text {
+    display: inline;
+    border-right: 3px solid rgba(255, 255, 255, 0.85);
+    padding-right: 5px;
+}
+
+.typing-text.finished {
+    border-right: none;
+    animation: none;
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgba(255, 255, 255, 0.85)
+    }
+}
+
+.typing-text:not(.finished) {
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-slide {
+        animation-duration: 20s;
+        /* Even slower on mobile for stability */
+    }
+}

@@ -1,1 +1,1739 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="parArc Design Studio - Creating timeless architectural experiences through precision, creativity, and excellence.">
+    <title>parArc Design Studio | Architecture & Design</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Modern Enhancements CSS -->
+    <link rel="stylesheet" href="css/modern-enhancements.css">
+    <link rel="stylesheet" href="css/hero-animation.css">
+
+    <style>
+        /* ========== CSS VARIABLES ========== */
+        :root {
+            --background: #FFFFFF;
+            --foreground: #18181B;
+            --card: #F4F4F5;
+            --muted: #F4F4F5;
+            --muted-foreground: #71717A;
+            --border: #E4E4E7;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+            background-color: var(--background);
+            color: var(--foreground);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ========== UTILITIES ========== */
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 48px;
+            }
+        }
+
+        .section-caption {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--muted-foreground);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 32px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            border: 1px solid currentColor;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: var(--font-body);
+        }
+
+        .btn:hover {
+            background: var(--foreground);
+            color: var(--background);
+            border-color: var(--foreground);
+        }
+
+        .btn.btn-white {
+            color: white;
+            border-color: white;
+        }
+
+        .btn.btn-white:hover {
+            background: white;
+            color: var(--foreground);
+        }
+
+        /* ========== NAVIGATION ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            transition: background 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(228, 228, 231, 0.2);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            outline: none;
+        }
+
+        .logo-image {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4)) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3)) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        .navbar.scrolled .logo-image {
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+        }
+
+        .logo:hover .logo-image {
+            opacity: 0.8;
+            transform: scale(1.05);
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35)) drop-shadow(0 16px 32px rgba(0, 0, 0, 0.3)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+        }
+
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 40px;
+                filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25)) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+            }
+        }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .navbar.scrolled .logo-text {
+            color: var(--foreground);
+        }
+
+        .logo-accent {
+            color: rgb(114, 11, 11);
+            font-weight: 500;
+        }
+
+        .navbar.scrolled .logo-accent {
+            color: rgb(114, 11, 11);
+        }
+
+        [data-theme="dark"] .logo-accent {
+            color: rgb(180, 30, 30);
+        }
+
+        .logo-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: -4px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar.scrolled .logo-subtitle {
+            color: var(--muted-foreground);
+        }
+
+        .nav-links {
+            display: none;
+            gap: 40px;
+            list-style: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--muted-foreground);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: white;
+        }
+
+        .navbar.scrolled .nav-link:hover,
+        .navbar.scrolled .nav-link.active {
+            color: var(--foreground);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .navbar.scrolled .mobile-menu-btn {
+            color: var(--foreground);
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--background);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--muted-foreground);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--foreground);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(24, 24, 27, 0.3);
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 80px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                padding-bottom: 128px;
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 2fr 1fr;
+                gap: 16px;
+            }
+        }
+
+        .hero-caption {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 7rem);
+            line-height: 0.95;
+            color: white;
+        }
+
+        .hero-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        @media (min-width: 768px) {
+            .hero-description {
+                font-size: 1rem;
+            }
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            width: 1px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+        }
+
+        .scroll-line {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: white;
+            animation: scrollAnimation 1.5s linear infinite;
+        }
+
+        @keyframes scrollAnimation {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(200%);
+            }
+        }
+
+        /* Sound Toggle */
+        .sound-toggle {
+            position: absolute;
+            bottom: 32px;
+            right: 48px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .sound-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .sound-toggle {
+                right: 24px;
+                bottom: 24px;
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        /* ========== PHILOSOPHY SECTION ========== */
+        .philosophy-section {
+            padding: 96px 0;
+        }
+
+        @media (min-width: 768px) {
+            .philosophy-section {
+                padding: 160px 0;
+            }
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .philosophy-grid {
+                grid-template-columns: 5fr 6fr;
+                gap: 64px;
+            }
+        }
+
+        .philosophy-text-large {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        @media (min-width: 768px) {
+            .philosophy-text-large {
+                font-size: 1.25rem;
+            }
+        }
+
+        .philosophy-text {
+            color: var(--muted-foreground);
+            margin-bottom: 32px;
+            text-align: justify;
+        }
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: color 0.3s ease;
+        }
+
+        .text-link:hover {
+            color: var(--muted-foreground);
+        }
+
+        /* ========== FEATURED PROJECTS ========== */
+        .featured-section {
+            padding: 96px 0;
+            background: rgba(244, 244, 245, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .featured-section {
+                padding: 160px 0;
+            }
+        }
+
+        .section-header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .section-header {
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: space-between;
+                margin-bottom: 80px;
+            }
+        }
+
+        .section-header-link {
+            margin-top: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .section-header-link {
+                margin-top: 0;
+            }
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+        }
+
+        .project-card {
+            display: block;
+            cursor: pointer;
+        }
+
+        .project-image-container {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .project-card:hover .project-image-container img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(24, 24, 27, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 32px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover .project-title {
+            color: var(--muted-foreground);
+        }
+
+        .project-location {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted-foreground);
+            margin-top: 4px;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services-section {
+            padding: 96px 0;
+        }
+
+        @media (min-width: 768px) {
+            .services-section {
+                padding: 160px 0;
+            }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: 4fr 7fr;
+            }
+        }
+
+        .services-intro p {
+            color: var(--muted-foreground);
+            margin-top: 24px;
+            margin-bottom: 32px;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 640px) {
+            .services-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .service-card {
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .service-number {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--muted-foreground);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .t-floating-mark {
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            font-size: 5rem;
+            font-family: serif;
+            opacity: 0.05;
+            line-height: 1;
+        }
+
+        .testimonial-creative-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-creative-card {
+                grid-template-columns: 5fr 6fr;
+            }
+        }
+
+        .t-image-wrap {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            border-radius: 2px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .t-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .testimonial-creative-card:hover .t-image-wrap img {
+            transform: scale(1.1);
+        }
+
+        .t-content-wrap {
+            padding: 40px;
+            background: var(--background);
+            z-index: 2;
+            position: relative;
+            margin-top: -60px;
+            margin-left: 20px;
+            margin-right: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        @media (min-width: 768px) {
+            .t-content-wrap {
+                margin-top: 0;
+                margin-left: -80px;
+                padding: 60px;
+            }
+        }
+
+        .t-quote {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: var(--foreground);
+            font-style: italic;
+        }
+
+        .t-info h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+
+        .t-info p {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        /* Testimonial Slider Enhancements */
+        .testimonials-slider-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonials-track-wrap {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            left: -30px;
+            right: -30px;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 20;
+            margin-top: 0;
+        }
+
+        @media (max-width: 1100px) {
+            .slider-nav {
+                left: 10px;
+                right: 10px;
+            }
+        }
+
+        .slider-arrow {
+            background: var(--background);
+            border: 1px solid var(--border);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            color: var(--foreground);
+            pointer-events: auto;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .slider-arrow:hover {
+            background: var(--foreground);
+            color: var(--background);
+            border-color: var(--foreground);
+            transform: scale(1.1);
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            padding: 96px 0;
+            background: var(--foreground);
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .cta-section {
+                padding: 160px 0;
+            }
+        }
+
+        .cta-caption {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 24px;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 6vw, 5rem);
+            color: var(--background);
+            margin-bottom: 32px;
+        }
+
+        .btn.btn-cta {
+            color: var(--background);
+            border-color: var(--background);
+        }
+
+        .btn.btn-cta:hover {
+            background: var(--background);
+            color: var(--foreground);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 80px 0;
+            background: var(--foreground);
+            color: var(--background);
+        }
+
+        @media (min-width: 768px) {
+            .footer {
+                padding: 128px 0;
+            }
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 4fr 2fr 3fr 3fr;
+                gap: 32px;
+            }
+        }
+
+        .footer-logo .logo-text {
+            font-size: 2rem;
+            color: var(--background);
+        }
+
+        .footer-logo .logo-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-logo p {
+            margin-top: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-heading {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links a,
+        .footer-links span {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--background);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .footer-social a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--background);
+        }
+
+        .footer-bottom {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-bottom p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="parArc Logo" class="logo-image">
+                <div class="logo-text-container">
+                    <span class="logo-text">par<span class="logo-accent">A</span>rc</span>
+                    <span class="logo-subtitle">design studio</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="html/about.html" class="nav-link">Studio</a></li>
+                <li><a href="html/projects.html" class="nav-link">Projects</a></li>
+                <li><a href="html/services.html" class="nav-link">Services</a></li>
+                <li><a href="html/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="html/about.html">Studio</a>
+        <a href="html/projects.html">Projects</a>
+        <a href="html/services.html">Services</a>
+        <a href="html/contact.html">Contact</a>
+    </div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <video autoplay muted loop playsinline class="hero-image">
+                <source src="hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <audio id="heroAudio" loop preload="auto">
+                <source src="Warm-Memories-Emotional-Inspiring-Piano(chosic.com).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-grid">
+                    <div>
+                        <p class="hero-caption fade-in">Architecture & Design Studio</p>
+                        <h1 class="hero-title">
+                            Creating Spaces<br>
+                            <em>That Inspire</em>
+                        </h1>
+                    </div>
+                    <div class="hero-right">
+                        <p class="hero-description fade-in">
+                            We design with purpose, crafting architectural experiences
+                            that balance form, function, and emotion.
+                        </p>
+                        <div class="fade-in">
+                            <a href="html/projects.html" class="btn btn-white">
+                                View Projects
+                                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+
+        <button class="sound-toggle" id="soundToggle" aria-label="Toggle Sound">
+            <i data-lucide="volume-x" id="soundIcon" style="width: 20px; height: 20px;"></i>
+        </button>
+    </section>
+
+    <!-- ========== PHILOSOPHY SECTION ========== -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div class="fade-in">
+                    <span class="section-caption">Our Philosophy</span>
+                    <h2 class="section-title" style="margin-top: 16px;">
+                        Architecture Is<br>
+                        <em>The Art of Space</em>
+                    </h2>
+                </div>
+                <div class="fade-in">
+                    <p class="philosophy-text-large">
+                        At parArc Design Studio, we believe that exceptional architecture
+                        emerges from the careful orchestration of light, material, and proportion.
+                    </p>
+                    <p class="philosophy-text">
+                        Every project begins with deep listening—understanding not just what our
+                        clients need, but how they aspire to live. We design spaces that resonate
+                        with their inhabitants while contributing meaningfully to the built environment.
+                    </p>
+                    <a href="html/about.html" class="text-link">
+                        Learn More About Us
+                        <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURED PROJECTS ========== -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-caption">Selected Work</span>
+                    <h2 class="section-title" style="margin-top: 16px;">
+                        Featured<br>Projects
+                    </h2>
+                </div>
+                <a href="html/projects.html" class="text-link section-header-link">
+                    View All Projects
+                    <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+                </a>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <a href="html/details/Residential/CUBE HOUSE.html" class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="https://ik.imagekit.io/StudioparArc/parArc/RESIDENCIAL%20/CUBE%20HOUSE/1_2%20-%20Photo.jpg?updatedAt=1772272176314"
+                            alt="Cube House" loading="lazy" width="800" height="600">
+                        <div class="project-overlay">
+                            <span
+                                style="color: rgba(255,255,255,0.7); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 8px;">Residential</span>
+                            <h3 style="font-family: var(--font-heading); color: white; font-size: 1.5rem;">Cube House
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3 class="project-title">Cube House</h3>
+                            <p class="project-location">Gandhinagar, Gujarat</p>
+                        </div>
+                        <i data-lucide="arrow-up-right"
+                            style="width: 20px; height: 20px; color: var(--muted-foreground);"></i>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="html/details/Residential/THE OVERHANGE HOUSE.html" class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="https://ik.imagekit.io/StudioparArc/parArc/RESIDENCIAL%20/THE%20OVERHANGE%20HOUSE/1.png?updatedAt=1772271983217"
+                            alt="The Overhange House" loading="lazy" width="800" height="600">
+                        <div class="project-overlay">
+                            <span
+                                style="color: rgba(255,255,255,0.7); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 8px;">Residential</span>
+                            <h3 style="font-family: var(--font-heading); color: white; font-size: 1.5rem;">The Overhange
+                                House
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3 class="project-title">The Overhange House</h3>
+                            <p class="project-location">Ahmedabad, Gujarat</p>
+                        </div>
+                        <i data-lucide="arrow-up-right"
+                            style="width: 20px; height: 20px; color: var(--muted-foreground);"></i>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="html/details/Interiors/THE TERRA CANVAS.html" class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="https://ik.imagekit.io/StudioparArc/parArc/INTERIOR/THE%20TERRA%20CANVAS/1.png?updatedAt=1772272268066"
+                            alt="The Terra Canvas" loading="lazy" width="800" height="600">
+                        <div class="project-overlay">
+                            <span
+                                style="color: rgba(255,255,255,0.7); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 8px;">Interiors</span>
+                            <h3 style="font-family: var(--font-heading); color: white; font-size: 1.5rem;">The Terra
+                                Canvas
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3 class="project-title">The Terra Canvas</h3>
+                            <p class="project-location">Gandhinagar, India</p>
+                        </div>
+                        <i data-lucide="arrow-up-right"
+                            style="width: 20px; height: 20px; color: var(--muted-foreground);"></i>
+                    </div>
+                </a>
+
+                <!-- Project 4 -->
+                <a href="html/details/Landscape/THE PILLAR PATH.html" class="project-card fade-in">
+                    <div class="project-image-container">
+                        <img src="https://ik.imagekit.io/StudioparArc/parArc/LANDSCAPE/VILLAGE%20HOME%20LANDSCAPE/1_10%20-%20Photo.jpg?updatedAt=1772271584952"
+                            alt="The Pillar Path" loading="lazy" width="800" height="600">
+                        <div class="project-overlay">
+                            <span
+                                style="color: rgba(255,255,255,0.7); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; display: block; margin-bottom: 8px;">Landscape</span>
+                            <h3 style="font-family: var(--font-heading); color: white; font-size: 1.5rem;">The Pillar
+                                Path</h3>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3 class="project-title">The Pillar Path</h3>
+                            <p class="project-location">Ahmedabad, India</p>
+                        </div>
+                        <i data-lucide="arrow-up-right"
+                            style="width: 20px; height: 20px; color: var(--muted-foreground);"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <div class="services-intro fade-in">
+                    <span class="section-caption">What We Do</span>
+                    <h2 class="section-title" style="margin-top: 16px;">
+                        Our<br>Services
+                    </h2>
+                    <p>
+                        From initial concept to final construction, we offer comprehensive
+                        architectural services tailored to each project's unique requirements.
+                    </p>
+                    <a href="html/services.html" class="btn">
+                        Explore Services
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+
+                <div class="services-list">
+                    <div class="service-card fade-in">
+                        <span class="service-number">01</span>
+                        <h3>Architectural Design</h3>
+                        <p>From concept to completion</p>
+                    </div>
+
+                    <div class="service-card fade-in">
+                        <span class="service-number">02</span>
+                        <h3>Interior Design</h3>
+                        <p>Crafting interior environments</p>
+                    </div>
+
+                    <div class="service-card fade-in">
+                        <span class="service-number">03</span>
+                        <h3>Commercial Design</h3>
+                        <p>Creating spaces for business</p>
+                    </div>
+
+                    <div class="service-card fade-in">
+                        <span class="service-number">04</span>
+                        <h3>Landscape Architecture</h3>
+                        <p>Connecting nature and architecture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; align-items: center;">
+                <div>
+                    <span class="section-caption">Client Perspectives</span>
+                    <h2 class="section-title" style="margin-top: 16px;">
+                        Voices of<br>Trust
+                    </h2>
+                </div>
+            </div>
+
+            <div class="testimonials-slider-container">
+                <div class="testimonials-track-wrap">
+                    <div class="testimonials-track" id="testimonialTrack">
+                        <!-- Testimonial 1: The Woven Plaza -->
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-creative-card">
+                                <div class="t-image-wrap">
+                                    <img src="https://ik.imagekit.io/StudioparArc/parArc/LANDSCAPE/PUNDHRA%20FARMHOUSE/1_10%20-%20Photo.jpg?updatedAt=1772271511699"
+                                        alt="The Woven Plaza" loading="lazy" width="800" height="800">
+                                </div>
+                                <div class="t-content-wrap">
+                                    <div class="t-floating-mark">“</div>
+                                    <div class="t-quote">
+                                        "The landscape design transformed our outdoor space into an architectural garden
+                                        that lives and breathes with the seasons."
+                                    </div>
+                                    <div class="t-info">
+                                        <h4>Hardik Patel</h4>
+                                        <p>Owner, The Woven Plaza</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2: The Glaze -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-creative-card">
+                                <div class="t-image-wrap">
+                                    <img src="https://ik.imagekit.io/StudioparArc/parArc/COMMERCIAL/THE%20GLAZE/1.png?updatedAt=1772271427823"
+                                        alt="The Glaze" loading="lazy" width="800" height="800">
+                                </div>
+                                <div class="t-content-wrap">
+                                    <div class="t-floating-mark">“</div>
+                                    <div class="t-quote">
+                                        "parArc delivered a workspace that not only looks stunning but has significantly
+                                        improved
+                                        our team's daily synergy."
+                                    </div>
+                                    <div class="t-info">
+                                        <h4>Suraj Infrastructure</h4>
+                                        <p>Company, The Glaze</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3: Cube House -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-creative-card">
+                                <div class="t-image-wrap">
+                                    <img src="https://ik.imagekit.io/StudioparArc/parArc/RESIDENCIAL%20/CUBE%20HOUSE/1_2%20-%20Photo.jpg?updatedAt=1772272176314"
+                                        alt="Cube House" loading="lazy" width="800" height="800">
+                                </div>
+                                <div class="t-content-wrap">
+                                    <div class="t-floating-mark">“</div>
+                                    <div class="t-quote">
+                                        "Minimalism at its finest. The purity of the geometry and the efficiency of the
+                                        internal layout make it a joy to live in."
+                                    </div>
+                                    <div class="t-info">
+                                        <h4>Sandip Patel</h4>
+                                        <p>Homeowner, Cube House</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4: The Terra Canvas -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-creative-card">
+                                <div class="t-image-wrap">
+                                    <img src="https://ik.imagekit.io/StudioparArc/parArc/INTERIOR/THE%20TERRA%20CANVAS/1.png?updatedAt=1772272268066"
+                                        alt="The Terra Canvas" loading="lazy" width="800" height="800">
+                                </div>
+                                <div class="t-content-wrap">
+                                    <div class="t-floating-mark">“</div>
+                                    <div class="t-quote">
+                                        "They captured our vision for an earthy, textural home perfectly. Every material
+                                        choice feels honest and deeply connected to nature."
+                                    </div>
+                                    <div class="t-info">
+                                        <h4>Parth Prajapati</h4>
+                                        <p>Homeowner, The Terra Canvas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5: The Screen House -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-creative-card">
+                                <div class="t-image-wrap">
+                                    <img src="https://ik.imagekit.io/StudioparArc/parArc/RESIDENCIAL%20/THE%20SCREEN%20HOUSE/1_1%20-%20Photo.jpg?updatedAt=1772271866019"
+                                        alt="The Screen House" loading="lazy" width="800" height="800">
+                                </div>
+                                <div class="t-content-wrap">
+                                    <div class="t-floating-mark">“</div>
+                                    <div class="t-quote">
+                                        "The privacy screens are not just functional; they are beautiful architectural
+                                        elements that give our home a unique identity."
+                                    </div>
+                                    <div class="t-info">
+                                        <h4>Maulik Patel</h4>
+                                        <p>Homeowner, The Screen House</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 6: The Intersect -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-creative-card">
+                                <div class="t-image-wrap">
+                                    <img src="https://ik.imagekit.io/StudioparArc/parArc/RESIDENCIAL%20/THE%20INTERSECT/1_1%20-%20Photo.jpg?updatedAt=1772272030631"
+                                        alt="The Intersect" loading="lazy" width="800" height="800">
+                                </div>
+                                <div class="t-content-wrap">
+                                    <div class="t-floating-mark">“</div>
+                                    <div class="t-quote">
+                                        "The way the different volumes intersect creates unexpected and beautiful
+                                        spatial experiences throughout the day."
+                                    </div>
+                                    <div class="t-info">
+                                        <h4>Bharat Patel</h4>
+                                        <p>Homeowner, The Intersect</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 7: The Gilded Quarry -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-creative-card">
+                                <div class="t-image-wrap">
+                                    <img src="https://ik.imagekit.io/StudioparArc/parArc/INTERIOR/THE%20GILDED%20QUARRY/1.png?updatedAt=1772272311407"
+                                        alt="The Gilded Quarry" loading="lazy" width="800" height="800">
+                                </div>
+                                <div class="t-content-wrap">
+                                    <div class="t-floating-mark">“</div>
+                                    <div class="t-quote">
+                                        "A masterclass in office interiors. The play of light and material has created
+                                        an incredibly productive work environment."
+                                    </div>
+                                    <div class="t-info">
+                                        <h4>Vijay Patel</h4>
+                                        <p>Owner, The Gilded Quarry</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 8: The Framed Room -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-creative-card">
+                                <div class="t-image-wrap">
+                                    <img src="https://ik.imagekit.io/StudioparArc/parArc/INTERIOR/THE%20FRAMED%20ROOM/1.png?updatedAt=1772272371661"
+                                        alt="The Framed Room" loading="lazy" width="800" height="800">
+                                </div>
+                                <div class="t-content-wrap">
+                                    <div class="t-floating-mark">“</div>
+                                    <div class="t-quote">
+                                        "Every window is a frame for a view. The architectural composition is rigorous
+                                        yet incredibly comfortable."
+                                    </div>
+                                    <div class="t-info">
+                                        <h4>Rushi Purohit</h4>
+                                        <p>Owner, The Framed Room</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-nav">
+                    <button class="slider-arrow" id="prevTestimonial" aria-label="Previous">
+                        <i data-lucide="arrow-left" style="width: 24px; height: 24px;"></i>
+                    </button>
+                    <button class="slider-arrow" id="nextTestimonial" aria-label="Next">
+                        <i data-lucide="arrow-right" style="width: 24px; height: 24px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="fade-in">
+                <span class="cta-caption">Start Your Project</span>
+                <h2 class="cta-title">
+                    Let's Create<br>
+                    <em>Something Exceptional</em>
+                </h2>
+                <a href="contact.html" class="btn btn-cta">
+                    Get in Touch
+                    <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="logo.png" alt="parArc Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">par<span class="logo-accent">A</span>rc</span>
+                            <span class="logo-subtitle">design studio</span>
+                        </div>
+                    </div>
+                    <p>
+                        Creating timeless architectural experiences through precision,
+                        creativity, and an unwavering commitment to excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="html/about.html">Studio</a>
+                        <a href="html/projects.html">Projects</a>
+                        <a href="html/services.html">Services</a>
+                        <a href="html/contact.html">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <div class="footer-links">
+                        <span>Architectural Design</span>
+                        <span>Interior Design</span>
+                        <span>Commercial</span>
+                        <span>Landscape</span>
+                        <span>Consultation</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <div class="footer-links">
+                        <a href="mailto:pararc2000@gmail.com">pararc2000@gmail.com</a>
+                        <a href="tel:+916355994947">+91 6355994947</a>
+                        <span>parArc Design Studio<br>Kalol, Gandhinagar, Gujarat</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#">
+                            Instagram
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                        <a href="#">
+                            LinkedIn
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                        <a href="#">
+                            Pinterest
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 parArc Design Studio. All rights reserved.</p>
+                <p style="opacity: 0.6; font-size: 11px; max-width: 500px; line-height: 1.4; margin: 0 auto;">
+                    Music Credit: "Warm Memories – Emotional Inspiring Piano" by Keys of Moon <br>
+                    Licensed under CC BY 4.0 | Source: https://soundcloud.com/keysofmoon
+                </p>
+                <p>Designed by oneverce</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <!-- Modern Enhancements -->
+    <script src="js/modern-enhancements.js"></script>
+
+    <script>
+        // Initialize Lucide Icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('open');
+
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    if (isMenuOpen) {
+                        icon.setAttribute('data-lucide', 'x');
+                    } else {
+                        icon.setAttribute('data-lucide', 'menu');
+                    }
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }
+            });
+        }
+
+        // Sound Toggle Logic
+        const soundToggle = document.getElementById('soundToggle');
+        const heroVideo = document.querySelector('.hero-image');
+        const heroAudio = document.getElementById('heroAudio');
+        const soundIcon = document.getElementById('soundIcon');
+        let isMuted = true;
+
+        if (soundToggle && (heroVideo || heroAudio)) {
+            soundToggle.addEventListener('click', () => {
+                isMuted = !isMuted;
+
+                if (heroAudio) {
+                    if (isMuted) {
+                        heroAudio.pause();
+                    } else {
+                        heroAudio.play().catch(e => console.log("Audio play failed:", e));
+                    }
+                } else if (heroVideo) {
+                    heroVideo.muted = isMuted;
+                }
+
+                const iconName = isMuted ? 'volume-x' : 'volume-2';
+                soundToggle.innerHTML = `<i data-lucide="${iconName}" style="width: 20px; height: 20px;"></i>`;
+
+                if (isMuted) {
+                    soundToggle.style.background = 'rgba(255, 255, 255, 0.1)';
+                } else {
+                    soundToggle.style.background = 'rgba(255, 255, 255, 0.3)';
+                }
+
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            });
+        }
+
+        // Testimonial Slider Logic
+        const track = document.getElementById('testimonialTrack');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const nextBtn = document.getElementById('nextTestimonial');
+        const prevBtn = document.getElementById('prevTestimonial');
+        let currentSlideIndex = 0;
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlideIndex);
+            });
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        if (nextBtn && prevBtn && track) {
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Auto-slide every 2.8 seconds
+            let slideInterval = setInterval(nextSlide, 2800);
+
+            // Pause on hover
+            const sliderContainer = document.querySelector('.testimonials-slider-container');
+            sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            sliderContainer.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 2800);
+            });
+        }
+    </script>
+    <script src="js/hero-animation.js"></script>
+</body>
+
+</html>

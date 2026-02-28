@@ -12,7 +12,7 @@ class HeroSlider {
         const depth = window.location.pathname.split('/').filter(p => p).length;
         this.basePath = (window.location.pathname.includes('/html/')) ? '../' : './';
 
-        this.images = images.map(img => this.basePath + img);
+        this.images = images.map(img => img.startsWith('http') ? img : this.basePath + img);
         this.currentIndex = 0;
         this.slides = [];
 
@@ -112,13 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Hero Slider Integration
     const projectImages = [
-        'RESIDENCIAL/THE OVERHANGE HOUSE/1.png',
-        'RESIDENCIAL/OFFSET TOWERS/3.png',
-        'INTERIOR/THE TERRA CANVAS/1.png',
-        'COMMERCIAL/FACTORY SHED/1.png',
-        'LANDSCAPE/VILLAGE HOME LANDSCAPE/1_10 - Photo.jpg',
-        'RESIDENCIAL/THE SCREEN HOUSE/1_1 - Photo.jpg',
-        'INTERIOR/THE GILDED QUARRY/1.png'
+        'https://ik.imagekit.io/StudioparArc/parArc/RESIDENCIAL%20/THE%20OVERHANGE%20HOUSE/1.png?updatedAt=1772271983217',
+        'https://ik.imagekit.io/StudioparArc/parArc/RESIDENCIAL%20/OFFSET%20TOWERS/3.png?updatedAt=1772272088141',
+        'https://ik.imagekit.io/StudioparArc/parArc/INTERIOR/THE%20TERRA%20CANVAS/1.png?updatedAt=1772272268066',
+        'https://ik.imagekit.io/StudioparArc/parArc/COMMERCIAL/FACTORY%20SHED/1.png?updatedAt=1772271329698',
+        'https://ik.imagekit.io/StudioparArc/parArc/LANDSCAPE/VILLAGE%20HOME%20LANDSCAPE/1_10%20-%20Photo.jpg?updatedAt=1772271584952',
+        'https://ik.imagekit.io/StudioparArc/parArc/RESIDENCIAL%20/THE%20SCREEN%20HOUSE/1_1%20-%20Photo.jpg?updatedAt=1772271866019',
+        'https://ik.imagekit.io/StudioparArc/parArc/INTERIOR/THE%20GILDED%20QUARRY/1.png?updatedAt=1772272311407'
     ];
 
     let heroBackground = document.querySelector('.hero-background');

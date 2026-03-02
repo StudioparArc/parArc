@@ -1,1 +1,1026 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About parArc Design Studio - Our philosophy, approach, and team. Led by Punit Prajapati.">
+    <title>About Studio | parArc Design Studio</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Modern Enhancements CSS -->
+    <link rel="stylesheet" href="../css/modern-enhancements.css">
+
+    <style>
+        /* ========== CSS VARIABLES ========== */
+        :root {
+            --background: #FFFFFF;
+            --foreground: #18181B;
+            --card: #F4F4F5;
+            --muted: #F4F4F5;
+            --muted-foreground: #71717A;
+            --border: #E4E4E7;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+            background-color: var(--background);
+            color: var(--foreground);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ========== UTILITIES ========== */
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 48px;
+            }
+        }
+
+        .section-caption {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--muted-foreground);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 32px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            border: 1px solid currentColor;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: var(--font-body);
+        }
+
+        .btn:hover {
+            background: var(--foreground);
+            color: var(--background);
+            border-color: var(--foreground);
+        }
+
+        /* ========== NAVIGATION ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(228, 228, 231, 0.2);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            outline: none;
+        }
+
+        .logo-image {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        .logo:hover .logo-image {
+            opacity: 0.8;
+            transform: scale(1.05);
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35)) drop-shadow(0 16px 32px rgba(0, 0, 0, 0.3)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+        }
+
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 40px;
+                filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25)) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+            }
+        }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--foreground);
+        }
+
+        .logo-accent {
+            color: rgb(114, 11, 11);
+            font-weight: 500;
+        }
+
+        [data-theme="dark"] .logo-accent {
+            color: rgb(180, 30, 30);
+        }
+
+        .logo-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--muted-foreground);
+            margin-top: -4px;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 40px;
+            list-style: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted-foreground);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--foreground);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--background);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--muted-foreground);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--foreground);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero-section {
+            padding: 160px 0 64px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section {
+                padding: 200px 0 96px;
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 8rem);
+            line-height: 0.95;
+            margin-top: 16px;
+        }
+
+        /* ========== INTRODUCTION SECTION ========== */
+        .intro-section {
+            padding: 64px 0;
+        }
+
+        @media (min-width: 768px) {
+            .intro-section {
+                padding: 96px 0;
+            }
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 64px;
+            }
+        }
+
+        .intro-image {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.7s ease;
+        }
+
+        .intro-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        .intro-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .intro-name {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .intro-text {
+            color: var(--muted-foreground);
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        /* ========== STUDIO SECTION ========== */
+        .studio-section {
+            padding: 64px 0;
+            background: rgba(244, 244, 245, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .studio-section {
+                padding: 96px 0;
+            }
+        }
+
+        .studio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .studio-grid {
+                grid-template-columns: 5fr 6fr;
+                gap: 64px;
+            }
+        }
+
+        .studio-text-large {
+            font-size: 1.125rem;
+            color: var(--foreground);
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        @media (min-width: 768px) {
+            .studio-text-large {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* ========== PROCESS IMAGE ========== */
+        .process-image {
+            width: 100%;
+            aspect-ratio: 21/9;
+            overflow: hidden;
+        }
+
+        .process-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ========== VALUES SECTION ========== */
+        .values-section {
+            padding: 96px 0;
+        }
+
+        @media (min-width: 768px) {
+            .values-section {
+                padding: 160px 0;
+            }
+        }
+
+        .values-header {
+            margin-bottom: 64px;
+        }
+
+        @media (min-width: 768px) {
+            .values-header {
+                margin-bottom: 96px;
+            }
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 640px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .values-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .value-card {
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+        }
+
+        .value-number {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .value-card p {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        /* ========== STATISTICS SECTION ========== */
+        .stats-section {
+            padding: 96px 0;
+            background: var(--foreground);
+        }
+
+        @media (min-width: 768px) {
+            .stats-section {
+                padding: 128px 0;
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 64px;
+                text-align: left;
+            }
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 6vw, 4rem);
+            color: var(--background);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            padding: 96px 0;
+        }
+
+        @media (min-width: 768px) {
+            .cta-section {
+                padding: 160px 0;
+            }
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .cta-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+        }
+
+        .cta-button-wrapper {
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .cta-button-wrapper {
+                text-align: right;
+            }
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 80px 0;
+            background: var(--foreground);
+            color: var(--background);
+        }
+
+        @media (min-width: 768px) {
+            .footer {
+                padding: 128px 0;
+            }
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 4fr 2fr 3fr 3fr;
+                gap: 32px;
+            }
+        }
+
+        .footer-logo .logo-text {
+            font-size: 2rem;
+            color: var(--background);
+        }
+
+        .footer-logo .logo-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-logo p {
+            margin-top: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-heading {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links a,
+        .footer-links span {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--background);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .footer-social a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--background);
+        }
+
+        .footer-bottom {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-bottom p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../logo.png" alt="parArc Logo" class="logo-image">
+                <div class="logo-text-container">
+                    <span class="logo-text">par<span class="logo-accent">A</span>rc</span>
+                    <span class="logo-subtitle">design studio</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">Studio</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="about.html">Studio</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-caption">About Us</span>
+                <h1 class="hero-title">
+                    Architecture Is<br>
+                    <em>A Dialogue</em>
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INTRODUCTION ========== -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-image fade-in">
+                    <img src="../PHOTO_1.png" alt="Punit Prajapati - Architect" width="600" height="800">
+                </div>
+                <div class="intro-content fade-in">
+                    <span class="section-caption">Principal Architect</span>
+                    <h2 class="intro-name">
+                        Punit<br>Prajapati
+                    </h2>
+                    <p class="intro-text">
+                        Punit Prajapatiâ€™s architectural journey is rooted in a strong academic foundation, having
+                        graduated with prestigious distinctions in design from the Institute of Architecture and
+                        Planning at Nirma University. Driven by a clear, ambitious vision for the built environment, he
+                        founded parArc Design Studio. From the studio's inception, Punit has been dedicated to crafting
+                        spaces that strike a delicate balance between timeless elegance and contemporary functionality,
+                        ensuring that his designs remain visually enduring and highly practical for the people who use
+                        them.
+                    </p>
+                    <p class="intro-text">
+                        Over the course of his dynamic three-year professional practice, Punit has cultivated a diverse
+                        and compelling portfolio. His expertise spans a wide spectrum of typologies, successfully
+                        navigating the unique challenges of residential, commercial, and institutional projects. Whether
+                        shaping an intimate private home, an innovative workspace, or a public facility, Punit
+                        approaches every commission with a refined design sensibility. He is highly regarded for his
+                        meticulous attention to craft and detail, viewing each project as an opportunity to seamlessly
+                        integrate aesthetic beauty with rigorous technical execution.
+                    </p>
+                    <p class="intro-text">
+                        At the heart of Punitâ€™s work is a profound belief that architecture must go beyond mere
+                        structure to actively elevate the human experience. His design philosophy is deeply
+                        site-specific; he advocates that every building must engage in a thoughtful, sustainable
+                        dialogue with its surrounding context and climate. By prioritizing environmental responsiveness
+                        and user-centric layouts, Punit ensures that parArc Design Studio creates not just buildings,
+                        but thoughtful, living spaces that resonate deeply with their inhabitants and respect their
+                        natural surroundings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STUDIO ========== -->
+    <section class="studio-section">
+        <div class="container">
+            <div class="studio-grid">
+                <div class="fade-in">
+                    <span class="section-caption">The Studio</span>
+                    <h2 class="section-title" style="margin-top: 16px;">
+                        parArc<br>
+                        <em>Design Studio</em>
+                    </h2>
+                </div>
+                <div class="fade-in">
+                    <p class="studio-text-large">
+                        At parArc Design Studio, we believe that architecture is a profound intersection of art,
+                        environment, and human experience. Founded on the principle of bridging timeless design with
+                        contemporary functionality, our practice is dedicated to creating spaces that are as enduring as
+                        they are innovative. We approach every projectâ€”whether a personalized residential retreat, a
+                        dynamic commercial workspace, or an impactful institutional facilityâ€”as a unique opportunity
+                        to
+                        shape the built environment with purpose, clarity, and elegance.
+                    </p>
+                    <p class="intro-text">
+                        Our studio's methodology is deeply rooted in rigorous craftsmanship and meticulous attention to
+                        detail. We view the architectural process as a highly collaborative journey, working closely
+                        with our clients to seamlessly translate their aspirations into tangible realities. By balancing
+                        refined aesthetic sensibilities with practical structural execution, parArc Design Studio
+                        consistently delivers bespoke design solutions that are technically precise and visually
+                        compelling down to the finest detail.
+                    </p>
+                    <p class="intro-text">
+                        True to our foundational philosophy, we are passionately committed to context-driven
+                        architecture. We design with a deep respect for the local climate, site topography, and natural
+                        surroundings, ensuring that each structure responds intelligently to its environment.
+                        Ultimately, our mission at parArc Design Studio is to craft immersive, sustainable spaces that
+                        not only serve a functional purpose but actively elevate everyday life and foster a lasting
+                        connection between people and the spaces they inhabit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROCESS IMAGE ========== -->
+    <section>
+        <div class="process-image fade-in">
+            <img src="../PHOTO_2.png" alt="Architectural process" loading="lazy" width="1920" height="822">
+        </div>
+    </section>
+
+    <!-- ========== VALUES ========== -->
+    <section class="values-section">
+        <div class="container">
+            <div class="values-header fade-in">
+                <span class="section-caption">Our Approach</span>
+                <h2 class="section-title" style="margin-top: 16px;">
+                    Guiding<br>
+                    <em>Principles</em>
+                </h2>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <span class="value-number">01</span>
+                    <h3>Precision</h3>
+                    <p>Every detail matters. We approach each project with meticulous attention to proportion, material,
+                        and craft.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <span class="value-number">02</span>
+                    <h3>Context</h3>
+                    <p>Great architecture responds to its environment. We design buildings that belong to their place
+                        and time.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <span class="value-number">03</span>
+                    <h3>Innovation</h3>
+                    <p>We embrace new technologies and methodologies while honoring timeless architectural principles.
+                    </p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <span class="value-number">04</span>
+                    <h3>Sustainability</h3>
+                    <p>Responsible design is not optional. We integrate sustainable practices into every project we
+                        undertake.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STATISTICS ========== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="fade-in">
+                    <div class="stat-number">06+</div>
+                    <p class="stat-label">Projects Completed</p>
+                </div>
+                <div class="fade-in">
+                    <div class="stat-number">03</div>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="fade-in">
+                    <div class="stat-number">-</div>
+                    <p class="stat-label">Design Awards</p>
+                </div>
+                <div class="fade-in">
+                    <div class="stat-number">2</div>
+                    <p class="stat-label">Team Members</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="fade-in">
+                    <h2 class="cta-title">
+                        Ready to Start<br>
+                        <em>Your Project?</em>
+                    </h2>
+                </div>
+                <div class="cta-button-wrapper fade-in">
+                    <a href="contact.html" class="btn">
+                        Get in Touch
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="../logo.png" alt="parArc Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">par<span class="logo-accent">A</span>rc</span>
+                            <span class="logo-subtitle">design studio</span>
+                        </div>
+                    </div>
+                    <p>
+                        Creating timeless architectural experiences through precision,
+                        creativity, and an unwavering commitment to excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="../html/about.html">Studio</a>
+                        <a href="../html/projects.html">Projects</a>
+                        <a href="../html/services.html">Services</a>
+                        <a href="../html/contact.html">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <div class="footer-links">
+                        <span>Architectural Design</span>
+                        <span>Interior Design</span>
+                        <span>Commercial</span>
+                        <span>Landscape</span>
+                        <span>Consultation</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <div class="footer-links">
+                        <a href="mailto:pararc2000@gmail.com">pararc2000@gmail.com</a>
+                        <a href="tel:+916355994947">+91 6355994947</a>
+                        <span>parArc Design Studio<br>Kalol, Gandhinagar, Gujarat</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/pararc_design_studio/">
+                            Instagram
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                        <a href="#">
+                            LinkedIn
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                        <a href="#">
+                            Pinterest
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 parArc Design Studio. All rights reserved.</p>
+                <p>Designed by oneverce</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="../js/modern-enhancements.js"></script>
+
+    <script>
+        // Initialize Lucide Icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('open');
+
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    if (isMenuOpen) {
+                        icon.setAttribute('data-lucide', 'x');
+                    } else {
+                        icon.setAttribute('data-lucide', 'menu');
+                    }
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

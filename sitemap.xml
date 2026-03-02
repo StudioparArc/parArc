@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ===== MAIN PAGES ===== -->
+  <url>
+    <loc>https://studioparaRC.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/about.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/projects.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/services.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+
+  <!-- ===== RESIDENTIAL PROJECT PAGES ===== -->
+  <url>
+    <loc>https://studioparaRC.com/html/details/Residential/CUBE%20HOUSE.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/details/Residential/THE%20OVERHANGE%20HOUSE.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/details/Residential/THE%20SCREEN%20HOUSE.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/details/Residential/THE%20INTERSECT.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/details/Residential/OFFSET%20TOWERS.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+
+  <!-- ===== COMMERCIAL PROJECT PAGES ===== -->
+  <url>
+    <loc>https://studioparaRC.com/html/details/Commercial/THE%20GLAZE.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/details/Commercial/FACTORY%20SHED.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+
+  <!-- ===== LANDSCAPE PROJECT PAGES ===== -->
+  <url>
+    <loc>https://studioparaRC.com/html/details/Landscape/THE%20WOVEN%20PLAZE.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/details/Landscape/THE%20PILLAR%20PATH.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+
+  <!-- ===== INTERIORS PROJECT PAGES ===== -->
+  <url>
+    <loc>https://studioparaRC.com/html/details/Interiors/THE%20FRAMED%20ROOM.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/details/Interiors/THE%20GILDED%20QUARRY.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://studioparaRC.com/html/details/Interiors/THE%20TERRA%20CANVAS.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+
+  <!-- ===== URBAN PROJECT PAGES ===== -->
+  <url>
+    <loc>https://studioparaRC.com/html/Urban/project-apartment-design.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+
+</urlset>

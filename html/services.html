@@ -1,1 +1,997 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Comprehensive architectural services including design, interiors, landscape, urban planning, and consultation.">
+    <title>Services | parArc Design Studio</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Modern Enhancements CSS -->
+    <link rel="stylesheet" href="../css/modern-enhancements.css">
+
+    <style>
+        /* ========== CSS VARIABLES ========== */
+        :root {
+            --background: #FFFFFF;
+            --foreground: #18181B;
+            --card: #F4F4F5;
+            --muted: #F4F4F5;
+            --muted-foreground: #71717A;
+            --border: #E4E4E7;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+            background-color: var(--background);
+            color: var(--foreground);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ========== UTILITIES ========== */
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 48px;
+            }
+        }
+
+        .section-caption {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--muted-foreground);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 32px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            border: 1px solid currentColor;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: var(--font-body);
+        }
+
+        .btn:hover {
+            background: var(--foreground);
+            color: var(--background);
+            border-color: var(--foreground);
+        }
+
+        /* ========== NAVIGATION ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(228, 228, 231, 0.2);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            outline: none;
+        }
+
+        .logo-image {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        .logo:hover .logo-image {
+            opacity: 0.8;
+            transform: scale(1.05);
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35)) drop-shadow(0 16px 32px rgba(0, 0, 0, 0.3)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+        }
+
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 40px;
+                filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25)) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+            }
+        }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--foreground);
+        }
+
+        .logo-accent {
+            color: rgb(114, 11, 11);
+            font-weight: 500;
+        }
+
+        [data-theme="dark"] .logo-accent {
+            color: rgb(180, 30, 30);
+        }
+
+        .logo-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--muted-foreground);
+            margin-top: -4px;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 40px;
+            list-style: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted-foreground);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--foreground);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--background);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--muted-foreground);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--foreground);
+        }
+
+        /* ========== HEADER SECTION ========== */
+        .header-section {
+            padding: 160px 0 64px;
+        }
+
+        @media (min-width: 768px) {
+            .header-section {
+                padding: 200px 0 96px;
+            }
+        }
+
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .header-grid {
+                grid-template-columns: 8fr 4fr;
+                gap: 32px;
+            }
+        }
+
+        .page-title {
+            font-size: clamp(3rem, 8vw, 8rem);
+            line-height: 0.95;
+            margin-top: 16px;
+        }
+
+        .header-description {
+            color: var(--muted-foreground);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        @media (min-width: 768px) {
+            .header-description {
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+
+        /* ========== SERVICES LIST ========== */
+        .services-section {
+            padding: 64px 0;
+        }
+
+        @media (min-width: 768px) {
+            .services-section {
+                padding: 96px 0;
+            }
+        }
+
+        .service-item {
+            border-top: 1px solid var(--border);
+            padding: 48px 0;
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .service-item {
+                padding: 64px 0;
+            }
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        @media (min-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr 4fr 6fr;
+                gap: 32px;
+            }
+        }
+
+        .service-number {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+        }
+
+        .service-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .service-title {
+                font-size: 1.875rem;
+            }
+        }
+
+        .service-item:hover .service-title {
+            color: var(--muted-foreground);
+        }
+
+        .service-description {
+            color: var(--muted-foreground);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        @media (min-width: 768px) {
+            .service-description {
+                grid-column: 3;
+            }
+        }
+
+        /* ========== PROCESS SECTION ========== */
+        .process-section {
+            padding: 96px 0;
+            background: rgba(244, 244, 245, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .process-section {
+                padding: 160px 0;
+            }
+        }
+
+        .process-header {
+            margin-bottom: 64px;
+        }
+
+        @media (min-width: 768px) {
+            .process-header {
+                margin-bottom: 96px;
+            }
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .process-step {
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+        }
+
+        .process-number {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            color: rgba(113, 113, 122, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .process-number {
+                font-size: 3.5rem;
+            }
+        }
+
+        .process-title {
+            font-size: 1.5rem;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .process-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            padding: 96px 0;
+        }
+
+        @media (min-width: 768px) {
+            .cta-section {
+                padding: 160px 0;
+            }
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .cta-grid {
+                grid-template-columns: 8fr 4fr;
+            }
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+        }
+
+        .cta-text {
+            color: var(--muted-foreground);
+            margin-top: 24px;
+            max-width: 600px;
+            text-align: justify;
+        }
+
+        .cta-button-wrapper {
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .cta-button-wrapper {
+                text-align: right;
+            }
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 80px 0;
+            background: var(--foreground);
+            color: var(--background);
+        }
+
+        @media (min-width: 768px) {
+            .footer {
+                padding: 128px 0;
+            }
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 4fr 2fr 3fr 3fr;
+                gap: 32px;
+            }
+        }
+
+        .footer-logo .logo-text {
+            font-size: 2rem;
+            color: var(--background);
+        }
+
+        .footer-logo .logo-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-logo p {
+            margin-top: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-heading {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links a,
+        .footer-links span {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--background);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .footer-social a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--background);
+        }
+
+        .footer-bottom {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-bottom p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../logo.png" alt="parArc Logo" class="logo-image">
+                <div class="logo-text-container">
+                    <span class="logo-text">par<span class="logo-accent">A</span>rc</span>
+                    <span class="logo-subtitle">design studio</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">Studio</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="about.html">Studio</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ========== HEADER SECTION ========== -->
+    <section class="header-section">
+        <div class="container">
+            <div class="header-grid">
+                <div class="fade-in">
+                    <span class="section-caption">What We Do</span>
+                    <h1 class="page-title">
+                        Our<br>
+                        <em>Services</em>
+                    </h1>
+                </div>
+                <div class="header-description fade-in">
+                    <p>
+                        We offer comprehensive architectural services, bringing
+                        expertise and creativity to every phase of your project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES LIST ========== -->
+    <section class="services-section">
+        <div class="container">
+            <!-- Service 1 -->
+            <div class="service-item fade-in">
+                <div class="service-grid">
+                    <div class="service-number">01</div>
+                    <div class="service-title-wrapper">
+                        <i data-lucide="building"
+                            style="width: 24px; height: 24px; color: var(--muted-foreground);"></i>
+                        <h3 class="service-title">Architectural Design</h3>
+                    </div>
+                    <p class="service-description">
+                        From concept to completion, we create timeless architectural solutions that respond to context,
+                        climate, and client aspirations. Our design process integrates sustainability and innovation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-item fade-in">
+                <div class="service-grid">
+                    <div class="service-number">02</div>
+                    <div class="service-title-wrapper">
+                        <i data-lucide="home" style="width: 24px; height: 24px; color: var(--muted-foreground);"></i>
+                        <h3 class="service-title">Interior Design</h3>
+                    </div>
+                    <p class="service-description">
+                        We craft interior environments that embody elegance and functionality. Our approach considers
+                        spatial flow, material palette, and lighting to create cohesive living experiences.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-item fade-in">
+                <div class="service-grid">
+                    <div class="service-number">03</div>
+                    <div class="service-title-wrapper">
+                        <i data-lucide="trees" style="width: 24px; height: 24px; color: var(--muted-foreground);"></i>
+                        <h3 class="service-title">Landscape Architecture</h3>
+                    </div>
+                    <p class="service-description">
+                        Our landscape designs create meaningful connections between architecture and nature. We develop
+                        outdoor spaces that enhance wellbeing and ecological balance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-item fade-in">
+                <div class="service-grid">
+                    <div class="service-number">04</div>
+                    <div class="service-title-wrapper">
+                        <i data-lucide="building-2"
+                            style="width: 24px; height: 24px; color: var(--muted-foreground);"></i>
+                        <h3 class="service-title">Commercial Design</h3>
+                    </div>
+                    <p class="service-description">
+                        We design innovative commercial spaces that elevate brand identity and foster productivity. Our
+                        commercial architecture focuses on functional efficiency, modern aesthetics, and creating
+                        engaging environments for businesses and customers alike.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-item fade-in">
+                <div class="service-grid">
+                    <div class="service-number">05</div>
+                    <div class="service-title-wrapper">
+                        <i data-lucide="landmark"
+                            style="width: 24px; height: 24px; color: var(--muted-foreground);"></i>
+                        <h3 class="service-title">Institutional Design</h3>
+                    </div>
+                    <p class="service-description">
+                        We create purposeful institutional environments including educational, healthcare, and civic
+                        buildings. We prioritize durability, accessibility, and high-performance design that serves the
+                        community and supports long-term goals.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-item fade-in">
+                <div class="service-grid">
+                    <div class="service-number">06</div>
+                    <div class="service-title-wrapper">
+                        <i data-lucide="users" style="width: 24px; height: 24px; color: var(--muted-foreground);"></i>
+                        <h3 class="service-title">Consultation</h3>
+                    </div>
+                    <p class="service-description">
+                        Our expert consultation services guide clients through complex architectural decisions. We offer
+                        strategic advice on design direction, feasibility, and value engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROCESS SECTION ========== -->
+    <section class="process-section">
+        <div class="container">
+            <div class="process-header fade-in">
+                <span class="section-caption">Our Process</span>
+                <h2 class="section-title" style="margin-top: 16px;">
+                    How We<br>
+                    <em>Work</em>
+                </h2>
+            </div>
+
+            <div class="process-grid">
+                <!-- Step 1 -->
+                <div class="process-step fade-in">
+                    <div class="process-number">01</div>
+                    <h3 class="process-title">Discovery</h3>
+                    <p class="process-description">
+                        We begin by understanding your vision, requirements, and aspirations through collaborative
+                        dialogue.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step fade-in">
+                    <div class="process-number">02</div>
+                    <h3 class="process-title">Concept</h3>
+                    <p class="process-description">
+                        Our team develops design concepts that respond to site, program, and your unique needs.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step fade-in">
+                    <div class="process-number">03</div>
+                    <h3 class="process-title">Development</h3>
+                    <p class="process-description">
+                        We refine the design through iterative development, integrating engineering and detailing.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step fade-in">
+                    <div class="process-number">04</div>
+                    <h3 class="process-title">Realization</h3>
+                    <p class="process-description">
+                        We oversee construction to ensure the design vision is faithfully executed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="fade-in">
+                    <h2 class="cta-title">
+                        Let's Discuss<br>
+                        <em>Your Project</em>
+                    </h2>
+                    <p class="cta-text">
+                        Every great project starts with a conversation. We'd love to hear about
+                        your vision and explore how we can bring it to life.
+                    </p>
+                </div>
+                <div class="cta-button-wrapper fade-in">
+                    <a href="contact.html" class="btn">
+                        Get in Touch
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="../logo.png" alt="parArc Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">par<span class="logo-accent">A</span>rc</span>
+                            <span class="logo-subtitle">design studio</span>
+                        </div>
+                    </div>
+                    <p>
+                        Creating timeless architectural experiences through precision,
+                        creativity, and an unwavering commitment to excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="about.html">Studio</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="services.html">Services</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <div class="footer-links">
+                        <span>Architectural Design</span>
+                        <span>Interior Design</span>
+                        <span>Commercial</span>
+                        <span>Landscape</span>
+                        <span>Consultation</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <div class="footer-links">
+                        <a href="mailto:pararc2000@gmail.com">pararc2000@gmail.com</a>
+                        <a href="tel:+916355994947">+91 6355994947</a>
+                        <span>parArc Design Studio<br>Kalol, Gandhinagar, Gujarat</span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/pararc_design_studio/">
+                            Instagram
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                        <a href="#">
+                            LinkedIn
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                        <a href="#">
+                            Pinterest
+                            <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 parArc Design Studio. All rights reserved.</p>
+                <p>Designed by oneverce</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="../js/modern-enhancements.js"></script>
+
+    <script>
+        // Initialize Lucide Icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('open');
+
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    if (isMenuOpen) {
+                        icon.setAttribute('data-lucide', 'x');
+                    } else {
+                        icon.setAttribute('data-lucide', 'menu');
+                    }
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

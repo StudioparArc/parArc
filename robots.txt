@@ -10,4 +10,4 @@ Disallow: /js/
 Disallow: /*.mp3$
 
 # Sitemap location
-Sitemap: https://studioparaRC.com/sitemap.xml
+Sitemap: https://pararcdesignstudio.in/sitemap.xml

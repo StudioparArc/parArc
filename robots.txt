@@ -1,5 +1,5 @@
 # robots.txt — parArc Design Studio
-# https://studioparaRC.com
+# https://pararcdesignstudio.in/
 
 User-agent: *
 Allow: /
